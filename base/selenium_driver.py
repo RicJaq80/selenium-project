@@ -198,7 +198,7 @@ class SeleniumDriver():
         if direction == "up":
             self.driver.execute_script("window.scrollBy(0, -800);")
         if direction == "down":
-            self.driver.execute_script("window.scrollBy(0,800)")
+            self.driver.execute_script("window.scrollBy(0,800);")
         else:
             self.log.error("Wrong Direction Request")
 
