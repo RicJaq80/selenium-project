@@ -33,7 +33,7 @@ class SeleniumDriver():
         elif locatorType == "linktext":
             return By.LINK_TEXT
         else:
-            self.log.info(locatorType + ". Locator type is not supported/correct")
+            self.log.info(locatorType + ". Locator type is not supported/correct!")
         return False
 
 
@@ -45,7 +45,7 @@ class SeleniumDriver():
             element = self.driver.find_element(byType, locator)
             self.log.info("Element: " + str(locator) + " is found")
         except:
-            self.log.error("Element: " + str(locator) + " is not found")
+            self.log.error("Element: " + str(locator) + " is not found!")
         return element
 
 
@@ -57,7 +57,7 @@ class SeleniumDriver():
             element = self.driver.find_elements(byType, locator)
             self.log.info("Elements: " + str(locator) + " are found")
         except:
-            self.log.error("Elements: " + str(locator) + " are not found")
+            self.log.error("Elements: " + str(locator) + " are not found!")
         return element
     
     def getElementText(self, locator, locatorType = "id", element=None):
@@ -73,7 +73,7 @@ class SeleniumDriver():
                 self.log.info("Element: " + str(locator) + "hast text: " + txt)
                 txt = txt.strip()
         except:
-            self.log.error("Element: " + str(locator) + "has no text")
+            self.log.error("Element: " + str(locator) + "has no text!")
         return txt
         
 
@@ -84,7 +84,7 @@ class SeleniumDriver():
             element.click()
             self.log.info("Element: " + str(locator) + " is clickable")
         except:
-            self.log.error("Element: " + str(locator) + " is not clickable")
+            self.log.error("Element: " + str(locator) + " is not clickable!")
             print_stack()
     
 
@@ -125,7 +125,7 @@ class SeleniumDriver():
                     element.send_keys(data[i] + "")
             self.log.info("Sent data on element with locator: " + locator)
         except:
-            self.log.info("Element: " + locator + " not found")
+            self.log.info("Element: " + locator + " not found!")
 
 
     def isElementPresent(self, locator, locatorType="id", element=None):
@@ -136,11 +136,11 @@ class SeleniumDriver():
                 self.log.info("Element: " + str(locator) + " is present")
                 return True
             else:
-                self.log.error("Element: " + str(locator) + " is not present")
+                self.log.error("Element: " + str(locator) + " is not present!")
                 return False
         except:
             # print("Element or Locator not correct")
-            self.log.error("Element or Locator not correct - not found")
+            self.log.error("Element or Locator not correct - not found!")
             return False
 
 
@@ -151,10 +151,10 @@ class SeleniumDriver():
                 self.log.info("Element List is found")
                 return True
             else:
-                self.log.warning("Element List not found")
+                self.log.warning("Element List not found!")
                 return False
         except:
-            self.log.error("Element List or Locator not correct - not found")
+            self.log.error("Element List or Locator not correct - not found!")
             return False
 
 
@@ -167,11 +167,11 @@ class SeleniumDriver():
                 isDisplayed = element.is_displayed()
                 self.log.info("Element: " + str(locator) + " is displayed")
             else:
-                self.log.error("Element: " + str(locator) + " is not displayed")
+                self.log.error("Element: " + str(locator) + " is not displayed!")
             return isDisplayed
         except:
             # print("Element or Locator not correct")
-            self.log.error("Element or Locator not correct - not found")
+            self.log.error("Element or Locator not correct - not found!")
             return False
     
 
@@ -189,7 +189,7 @@ class SeleniumDriver():
             element = wait.until(EC.visibility_of_element_located((byType, locator)))
             self.log.info("Element: " + str(locator) + " appeared on the web page")
         except:
-            self.log.error("Element: " + str(locator) + " DID NOT appear on the web page")
+            self.log.error("Element: " + str(locator) + " DID NOT appear on the web page!")
             # print_stack()
         return element
     
@@ -200,7 +200,7 @@ class SeleniumDriver():
         if direction == "down":
             self.driver.execute_script("window.scrollBy(0,800);")
         else:
-            self.log.error("Wrong Direction Request")
+            self.log.error("Wrong Direction Request!")
 
     
     def switchToFrame(self, id="", name="", index=None):
@@ -253,7 +253,7 @@ class SeleniumDriver():
                 self.switchDefaultContent()
             return result
         except:
-            self.log.error("iFrame index not found")
+            self.log.error("iFrame index not found!")
             return result
 
 
@@ -303,7 +303,7 @@ class SeleniumDriver():
             if enabled:
                 self.log.info("Element: " + info + " is enabled")
             else:
-                self.log.info("Element: " + info + " is not enabled")
+                self.log.info("Element: " + info + " is not enabled!")
         except:
-            self.log.error("Element: " + info + " state could not be found")
+            self.log.error("Element: " + info + " state could not be found!")
         return enabled
