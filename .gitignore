@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 *.pyc
 */__pycache__/
 *.log
 .idea/
 .pytest_cache/
+=======
+*/__pycache__/
+.idea/
+.pytest_cache/
+*.log
+*.pyc
+>>>>>>> Exclamations

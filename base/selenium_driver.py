@@ -307,3 +307,12 @@ class SeleniumDriver():
         except:
             self.log.error("Element: " + info + " state could not be found!")
         return enabled
+
+    def returnCurrentUrl(self):
+        currentUrl = None
+        try:
+            currentUrl = self.driver.current_url
+            print("Current URL: " + currentUrl)
+        except:
+            print("Browser didn't return URL!")
+        return currentUrl
